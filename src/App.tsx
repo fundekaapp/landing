@@ -9,6 +9,7 @@ import DarkVeil from "./DarkVeil";
 import { useScroll, useTransform, useSpring, MotionValue } from "motion/react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
+import Ctabutton from "./components/Ctabutton";
 function Box(props: any) {
 	const group = useRef<THREE.Group>(null);
 	const { nodes, animations } = useGLTF("/mascot.glb");
@@ -170,7 +171,7 @@ function App() {
 						onAnimationComplete={handleAnimationComplete}
 						className="subtitle bottom-subtitle"
 					/>
-					<button className="cta-button">Start Learning</button>
+					<Ctabutton title={"Start Learning"} link={"x.com/fundekaapp"} />
 				</section>
 				{/* Features.. (unchanged) */}
 				<section className="feature-block right-section">
