@@ -17,6 +17,7 @@ function Navbar() {
 					<li className="link">
 						<a href="#features">Features</a>
 					</li>
+
 					<li className="link">
 						<a href="#pricing">Pricing</a>
 					</li>
