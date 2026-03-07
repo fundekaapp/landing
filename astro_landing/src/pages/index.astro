@@ -1,48 +1,310 @@
 ---
 import BaseHead from '../components/BaseHead.astro';
-import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
-import { SITE_DESCRIPTION, SITE_TITLE } from '../consts';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+		<style>
+			/* General styling for the page */
+			body {
+				font-family: 'Google Sans', sans-serif;
+				color: #000000;
+				margin: 0;
+				padding: 0;
+				overflow-x: hidden;
+			}
+
+			/* Hero Section */
+			.hero-section {
+				display: flex;
+				justify-content: space-around;
+				align-items: center;
+				padding: 4em 2em;
+				background-color: #ffffff;
+				min-height: 600px; /* Adjust based on design */
+			}
+
+			.hero-content {
+				max-width: 600px;
+				text-align: left;
+			}
+
+			.hero-title {
+				font-size: 3.5em;
+				font-weight: 700;
+				line-height: 1.1;
+				margin-bottom: 0.5em;
+			}
+
+			.hero-title .highlight {
+				color: #9584ff;
+			}
+
+			.hero-description {
+				font-size: 1.1em;
+				color: rgba(0, 0, 0, 0.8);
+				margin-bottom: 2em;
+				line-height: 1.6;
+			}
+
+			.signup-button {
+				display: inline-block;
+				background-color: #000000;
+				color: #ffffff;
+				border-radius: 24px;
+				padding: 0.8em 2em;
+				text-decoration: none;
+				font-weight: 500;
+				transition: background-color 0.3s ease;
+			}
+
+			.signup-button:hover {
+				background-color: #333333;
+			}
+
+			.hero-image-container {
+				position: relative;
+				width: 400px; /* Adjust based on Penpot design */
+				height: 400px; /* Adjust based on Penpot design */
+			}
+
+			.hero-image-container svg {
+				width: 100%;
+				height: auto;
+			}
+
+			.blurred-circle {
+				position: absolute;
+				background-color: rgba(149, 132, 255, 0.5); /* Penpot ellipse color */
+				border-radius: 50%;
+				filter: blur(94px); /* Penpot blur value */
+				z-index: -1;
+			}
+
+			.circle-1 {
+				width: 782px;
+				height: 796px;
+				top: -200px;
+				left: -300px;
+			}
+
+			/* Section: Better learning, better results */
+			.learning-results-section {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				padding: 6em 2em;
+				background-color: #f8f8f8; /* A light background for contrast */
+			}
+
+			.learning-content {
+				max-width: 600px;
+				text-align: left;
+				margin-right: 4em;
+			}
+
+			.learning-title {
+				font-size: 2.8em;
+				font-weight: 700;
+				line-height: 1.1;
+				margin-bottom: 0.5em;
+			}
+
+			.learning-title .highlight {
+				color: #9584ff;
+			}
+
+			.learning-description {
+				font-size: 1.1em;
+				color: rgba(0, 0, 0, 0.8);
+				margin-bottom: 2em;
+				line-height: 1.6;
+			}
+
+			.learn-more-link {
+				color: rgba(0, 0, 0, 0.8);
+				text-decoration: underline;
+				font-weight: 500;
+			}
+
+			.learning-image-container img {
+				max-width: 100%;
+				height: auto;
+				border-radius: 8px;
+			}
+
+			/* Benefits Section */
+			.benefits-section {
+				padding: 4em 2em;
+				background-color: #ffffff;
+				text-align: center;
+			}
+
+			.benefits-grid {
+				display: grid;
+				grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+				gap: 2em;
+				max-width: 1200px;
+				margin: 0 auto;
+			}
+
+			.benefit-card {
+				background-color: #8cff85; /* Penpot Rectangle colors */
+				color: #ffffff;
+				border-radius: 24px;
+				padding: 1.5em;
+				text-align: center;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				height: 200px;
+			}
+
+			.benefit-card.purple {
+				background-color: #9584ff;
+			}
+
+			.benefit-card.orange {
+				background-color: #ffb785;
+			}
+
+			.benefit-icon {
+				width: 60px;
+				height: 60px;
+				margin-bottom: 1em;
+			}
+
+			.benefit-title {
+				font-size: 1.2em;
+				font-weight: 700;
+				margin-bottom: 0.5em;
+			}
+
+			.benefit-description {
+				font-size: 0.9em;
+				line-height: 1.4;
+			}
+
+			/* Media Queries */
+			@media (max-width: 768px) {
+				.hero-section {
+					flex-direction: column-reverse;
+					text-align: center;
+					padding: 2em 1em;
+				}
+
+				.hero-content {
+					margin-bottom: 2em;
+					text-align: center;
+				}
+
+				.hero-image-container {
+					width: 250px;
+					height: 250px;
+				}
+
+				.learning-results-section {
+					flex-direction: column;
+					text-align: center;
+					padding: 2em 1em;
+				}
+
+				.learning-content {
+					margin-right: 0;
+					margin-bottom: 2em;
+					text-align: center;
+				}
+
+				.learning-image-container {
+					width: 100%;
+				}
+
+				.benefits-grid {
+					grid-template-columns: 1fr;
+				}
+			}
+		</style>
 	</head>
 	<body>
 		<Header />
 		<main>
-			<h1>🧑‍🚀 Hello, Astronaut!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This template
-				serves as a lightweight, minimally-styled starting point for anyone looking to build a personal
-				website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to
-				<a href="https://docs.astro.build/">read the docs</a>
-				or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out
-				<a href="https://github.com/Charca/astro-blog-template">astro-blog-template</a>
-				by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
+			<section class="hero-section">
+				<div class="hero-content">
+					<h1 class="hero-title">
+						An easier, <span class="highlight">more powerful</span> way to learn.
+					</h1>
+					<p class="hero-description">
+						Work with a study companion that helps you focus, organise your learning, and get results you can actually see — anytime, anywhere.
+					</p>
+					<a href="/signup" class="signup-button">Sign up - It's free</a>
+				</div>
+				<div class="hero-image-container">
+					<div class="blurred-circle circle-1"></div>
+					<svg width="133" height="133" viewBox="1232 394 133 133" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M1258.97 455.586C1258.97 429.952 1276.91 409.171 1299.02 409.171C1321.14 409.171 1339.08 429.952 1339.08 455.586V488.077C1339.08 498.331 1331.9 506.644 1323.06 506.644C1320.43 506.644 1317.96 505.913 1315.77 504.619C1314.66 503.959 1313.55 503.236 1312.43 502.51C1308.51 499.954 1304.52 497.361 1300.16 497.361H1297.88C1293.53 497.361 1289.54 499.954 1285.62 502.51C1284.5 503.236 1283.39 503.959 1282.28 504.619C1280.09 505.913 1277.62 506.644 1274.99 506.644C1266.15 506.644 1258.97 498.331 1258.97 488.077V455.586Z" fill="#9584ff"/>
+						<g opacity="0.8" style="mix-blend-mode:multiply">
+							<path fill-rule="evenodd" clip-rule="evenodd" d="M1275.38 447.516C1274.14 441.911 1277.43 436.396 1282.76 435.144C1288.1 433.891 1293.49 437.368 1294.86 442.942C1294.89 443.082 1294.91 443.223 1294.93 443.364L1295.12 444.025L1295.27 444.571L1295.34 444.832L1295.42 445.109L1295.5 445.394L1295.57 445.696L1295.63 446.012L1295.66 446.166L1295.7 446.331L1295.73 446.499L1295.75 446.666L1295.77 446.836L1295.78 446.914L1295.78 446.992L1295.78 447.071L1295.77 447.151L1295.75 447.234L1295.72 447.319L1295.68 447.406L1295.63 447.495L1295.57 447.584L1295.5 447.674L1295.42 447.766L1295.34 447.86L1295.24 447.955L1295.14 448.052L1295.03 448.151L1294.92 448.251L1294.79 448.353L1294.66 448.456L1294.52 448.561L1294.36 448.668L1294.2 448.776L1294.02 448.886L1293.83 448.997L1293.64 449.11L1293.43 449.224L1293.21 449.34L1292.98 449.458L1292.74 449.577L1292.5 449.698L1292.24 449.821L1291.98 449.945L1291.7 450.071L1291.41 450.198L1291.12 450.327L1290.81 450.457L1290.49 450.589L1290.16 450.723L1289.82 450.858L1289.47 450.995L1289.11 451.133L1288.74 451.274L1288.36 451.416L1287.97 451.56L1287.58 451.705L1287.17 451.852L1286.76 452.001L1286.33 452.151L1285.9 452.303L1285.45 452.457L1285 452.613L1284.54 452.771L1284.07 452.93L1283.59 453.092L1283.11 453.255L1282.61 453.42L1282.11 453.587L1281.6 453.756L1281.08 453.927L1280.55 454.1L1280.02 454.276L1279.48 454.454L1278.93 454.634L1278.37 454.815L1277.81 455L1277.23 455.187L1276.65 455.377L1276.06 455.568L1275.47 455.761L1275.38 447.516Z" fill="#9584ff"/>
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M1289.306 444.613C1289.323 444.155 1289.279 443.694 1289.171 443.247C1288.571 440.805 1286.209 439.282 1283.872 439.831C1281.536 440.379 1280.094 442.795 1280.638 445.25L1280.69 445.462L1280.785 445.8L1280.917 446.127L1281.082 446.435L1281.282 446.721L1281.499 446.991L1281.728 447.245L1281.969 447.485L1282.221 447.712L1282.484 447.927L1282.757 448.131L1283.039 448.324L1283.328 448.508L1283.623 448.683L1283.923 448.848L1284.228 449.004L1284.536 449.151L1284.846 449.29L1285.158 449.419L1285.469 449.541L1285.78 449.654L1286.087 449.759L1286.39 449.855L1286.689 449.943L1286.983 450.023L1287.271 450.094L1287.553 450.158L1287.828 450.213L1288.096 450.259L1288.356 450.297L1288.608 450.326L1288.852 450.347L1289.088 450.36L1289.315 450.364L1289.306 444.613Z" fill="#000000"/>
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M1322.95 448.17C1322.91 448.307 1322.87 448.442 1322.82 448.577L1322.75 448.849L1322.61 449.387L1322.4 449.902L1322.12 450.39L1321.78 450.849L1321.4 451.27L1320.97 451.65L1320.5 451.989L1320 452.285L1319.46 452.544L1318.9 452.766L1318.3 452.95L1317.69 453.096L1317.06 453.204L1316.42 453.275L1315.76 453.308L1315.09 453.304L1314.41 453.262L1313.71 453.183L1313.01 453.067L1312.31 452.916L1311.61 452.73L1310.92 452.509L1310.23 452.254L1309.56 451.965L1308.91 451.644L1308.28 451.293L1307.69 450.913L1307.13 450.505L1306.6 450.071L1306.12 449.613L1305.69 449.132L1305.32 448.631L1305.02 448.113L1304.81 447.58L1304.68 447.034L1304.64 446.48L1304.69 445.922L1304.83 445.366L1305.07 444.81L1305.41 444.258L1305.84 443.715L1306.38 443.19L1307.01 442.689L1307.72 442.221L1308.51 441.787L1309.38 441.393L1310.32 441.042L1311.31 440.738L1312.35 440.485L1313.43 440.279L1314.54 440.125L1315.68 440.019L1316.85 439.969L1318.03 439.974L1319.23 440.038L1320.43 440.161L1321.6 440.342L1322.75 440.579L1324.08 435.666C1321.21 437.007 1315.91 435.618 1310.61 434.229C1305.12 437.563 1303.59 443.098 1303.55 443.272L1303.88 443.792L1304.38 444.409L1304.99 445.109L1305.71 445.877L1306.52 446.69L1307.41 447.538L1308.38 448.411L1309.41 449.303L1310.51 450.213L1311.66 451.139L1312.86 452.078L1314.11 453.029L1315.39 453.989L1316.69 454.957L1318.03 455.932L1319.39 456.911L1320.78 457.893L1322.18 458.875L1323.59 459.854L1325 460.83C1322.76 465.415 1320.29 475.16 1271.97 465.415C1271.72 455.67 1282.43 461.282 1295.82 461.715C1309.21 462.149 1320.81 457.244 1320.87 467Z" fill="#000000"/>
+						<path fill-rule="evenodd" clip-rule="evenodd" d="M1247.42 458.791C1240.88 449.719 1239.04 440.038 1243.29 437.074C1247.53 434.11 1256.28 438.966 1262.92 447.968C1269.55 456.969 1271.6 466.766 1267.51 469.943C1263.43 473.121 1254.73 468.497 1247.99 459.571L1247.42 458.791Z" fill="#9584ff"/>
+						<path d="M1278.188 459.719C1276.615 459.692 1275.301 459.886 1274.289 460.442C1274.219 460.789 1274.187 461.137 1274.195 461.486C1274.484 467.037 1284.522 471.45 1296.712 471.384C1308.253 471.31 1317.756 467.231 1318.602 461.988C1314.58 459.461 1305.693 462.035 1295.822 461.715C1288.707 461.485 1282.49 459.793 1278.188 459.719Z" fill="#FFFFFF"/>
+					</svg>
+				</div>
+			</section>
+
+			<section class="learning-results-section">
+				<div class="learning-content">
+					<h2 class="learning-title">
+						Better learning, better <span class="highlight">results</span>
+					</h2>
+					<p class="learning-description">
+						Scientifically backed study methods to help you master concepts
+					</p>
+					<a href="/learn-more" class="learn-more-link">Learn more</a>
+				</div>
+				<div class="learning-image-container">
+					<img src="/assets/learning-results.png" alt="Learning Results" />
+				</div>
+			</section>
+
+			<section class="benefits-section">
+				<div class="benefits-grid">
+					<div class="benefit-card">
+						<h3 class="benefit-title">AI Study Companion</h3>
+						<p class="benefit-description">AI Study Companion description</p>
+					</div>
+					<div class="benefit-card purple">
+						<h3 class="benefit-title">Spaced Repetition Flashcards</h3>
+						<p class="benefit-description">Spaced Repetition Flashcards description</p>
+					</div>
+					<div class="benefit-card orange">
+						<h3 class="benefit-title">Past Exam Question Quizzes</h3>
+						<p class="benefit-description">Past Exam Question Quizzes description</p>
+					</div>
+					<div class="benefit-card orange">
+						<h3 class="benefit-title">Built-in Exam and Study timetable</h3>
+						<p class="benefit-description">Built-in Exam and Study timetable description</p>
+					</div>
+					<div class="benefit-card">
+						<h3 class="benefit-title">Gamified Learning</h3>
+						<p class="benefit-description">Gamified Learning description</p>
+					</div>
+					<div class="benefit-card purple">
+						<h3 class="benefit-title">Video and Audio Content</h3>
+						<p class="benefit-description">Video and Audio Content description</p>
+					</div>
+					<div class="benefit-card">
+						<h3 class="benefit-title">Concept Understanding map</h3>
+						<p class="benefit-description">Concept Understanding map description</p>
+					</div>
+				</div>
+			</section>
 		</main>
 		<Footer />
 	</body>

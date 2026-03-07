@@ -30,10 +30,18 @@
 	font-style: normal;
 	font-display: swap;
 }
+@font-face {
+	font-family: "Blonde";
+	src: url("/fonts/blonde.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
 body {
 	font-family: "Atkinson", sans-serif;
 	margin: 0;
-	padding: 0;
+	padding: 0 1em;
 	text-align: left;
 	background: linear-gradient(var(--gray-gradient)) no-repeat;
 	background-size: 100% 600px;
