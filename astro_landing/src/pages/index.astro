@@ -1,0 +1,84 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+
+	</head>
+	<body>
+		<Header />
+		<main>
+			<section class="hero-section">
+				<div class="hero-content">
+					<h1 class="hero-title">
+						An easier, <span class="highlight">more powerful</span> way to learn.
+					</h1>
+					<p class="hero-description">
+						Work with a study companion that helps you focus, organise your learning, and get results you can actually see — anytime, anywhere.
+					</p>
+					<a href="/signup" class="signup-button">Sign up - It's free</a>
+				</div>
+				<div class="hero-image-container">
+					<div class="blurred-circle"></div>
+					<!-- Placeholder for hero image SVG (manually exported from Penpot) -->
+					<!-- The SVG for 'layer1' group (ID: 7f0221e4-04a1-8087-8007-80905bd5e32b) should be placed here -->
+				</div>
+			</section>
+
+			<section class="learning-results-section">
+				<div class="learning-content">
+					<h2 class="learning-title">
+						Better learning, better <span class="highlight">results</span>
+					</h2>
+					<p class="learning-description">
+						Scientifically backed study methods to help you master concepts
+					</p>
+					<a href="/learn-more" class="learn-more-link">Learn more</a>
+				</div>
+				<div class="learning-image-container">
+					<img src="/assets/learning-results.png" alt="Learning Results" />
+				</div>
+			</section>
+
+			<section class="benefits-section">
+				<div class="benefits-grid">
+					<div class="benefit-card">
+						<h3 class="benefit-title">AI Study Companion</h3>
+						<p class="benefit-description">AI Study Companion description</p>
+					</div>
+					<div class="benefit-card purple">
+						<h3 class="benefit-title">Spaced Repetition Flashcards</h3>
+						<p class="benefit-description">Spaced Repetition Flashcards description</p>
+					</div>
+					<div class="benefit-card orange">
+						<h3 class="benefit-title">Past Exam Question Quizzes</h3>
+						<p class="benefit-description">Past Exam Question Quizzes description</p>
+					</div>
+					<div class="benefit-card orange">
+						<h3 class="benefit-title">Built-in Exam and Study timetable</h3>
+						<p class="benefit-description">Built-in Exam and Study timetable description</p>
+					</div>
+					<div class="benefit-card">
+						<h3 class="benefit-title">Gamified Learning</h3>
+						<p class="benefit-description">Gamified Learning description</p>
+					</div>
+					<div class="benefit-card purple">
+						<h3 class="benefit-title">Video and Audio Content</h3>
+						<p class="benefit-description">Video and Audio Content description</p>
+					</div>
+					<div class="benefit-card">
+						<h3 class="benefit-title">Concept Understanding map</h3>
+						<p class="benefit-description">Concept Understanding map description</p>
+					</div>
+				</div>
+			</section>
+		</main>
+		<Footer />
+	</body>
+</html>

@@ -1,0 +1,95 @@
+/*
+  The CSS in this file tells Astro to apply a custom cascade layer.
+  You can learn more about it at https://docs.astro.build/en/tutorials/add-css-styling/#cascade-layers
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;500;700&display=swap');
+
+@layer base {
+  html {
+    background-color: #fdf8ff; /* Penpot Landing Page Background */
+    font-family: 'Atkinson Hyperlegible', sans-serif; /* Default font */
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  /* Headings (using Blonde for specific titles, Atkinson for others as fallback) */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    color: #000000;
+  }
+
+  /* Hero Section */
+  .hero-section {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 4em 2em;
+    min-height: 900px; /* Adjusted based on Penpot design */
+    background-color: #fbf8ff; /* Background from header */
+  }
+
+  .hero-content {
+    max-width: 600px;
+    text-align: left;
+    z-index: 1;
+  }
+
+  .hero-title {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.5em;
+    color: #000000;
+  }
+
+  .hero-title .highlight {
+    color: #9584ff;
+  }
+
+  .hero-description {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 2em;
+    line-height: 1.6;
+  }
+
+  .signup-button {
+    display: inline-block;
+    background-color: #9584FF;
+    color: #ffffff;
+    border-radius: 42px;
+    padding: 16px 32px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+  }
+
+  .signup-button:hover {
+    background-color: #7a6bff;
+  }
+
+  .hero-image-container {
+    position: relative;
+    width: 600px; /* Adjust based on Penpot design */
+    height: 600px; /* Adjust based on Penpot design */
+  }
+
+  .blurred-circle {
+    position: absolute;
+    background-color: rgba(149, 132, 255, 0.5); /* Penpot ellipse color */
+    border-radius: 50%;
+    filter: blur(94px); /* Penpot blur value */
+    z-index: 0;
+    width: 782px;
+    height: 796px;
+    top: -100px; /* Adjusted to be relative to hero-image-container */
+    left: -100px; /* Adjusted to be relative to hero-image-container */
+  }}

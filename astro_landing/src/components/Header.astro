@@ -1,0 +1,98 @@
+---
+import { SITE_TITLE } from '../consts';
+import HeaderLink from './HeaderLink.astro';
+---
+
+<header>
+	<nav>
+		<div class="logo-container">
+			<svg width="30.976744186046517" height="36" viewBox="452 251 30.976744186046517 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<defs>
+					<linearGradient id="gradient1" x1="0%" y1="50%" x2="100%" y2="50%">
+						<stop offset="0%" stop-color="#1b005b" />
+						<stop offset="100%" stop-color="#9584ff" />
+					</linearGradient>
+				</defs>
+				<path fill="#9584ff" d="M460.15142822265625,253.39031982421875C471.086181640625,250.57557678222656,482.97674560546875,251.0265655517578,482.97674560546875,251.0265655517578C482.97674560546875,251.0265655517578,482.55157470703125,257.68316650390625,478.9217529296875,259.447265625C475.2919921875,261.21136474609375,455.720458984375,261.4663391113281,455.720458984375,261.4663391113281C455.720458984375,261.4663391113281,455.773193359375,254.51736450195312,460.15142822265625,253.39031982421875Z" />
+				<path fill="url(#gradient1)" d="M459.37481689453125,264.83709716796875C467.76776123046875,262.5403137207031,476.36370849609375,263.9448547363281,476.36370849609375,263.9448547363281C476.36370849609375,263.9448547363281,475.63311767578125,269.1007080078125,472.163818359375,270.5818786621094C468.694580078125,272.06292724609375,455.53021240234375,271.70892333984375,455.53021240234375,271.70892333984375C455.53021240234375,271.70892333984375,456.0147705078125,265.7566833496094,459.37481689453125,264.83709716796875Z" />
+				<path fill="#9584ff" d="M465.33306884765625,263.74908447265625C463.3843994140625,263.9427185058594,461.32049560546875,264.281982421875,459.26776123046875,264.8437194824219C457.73974609375,265.261962890625,456.8115234375,266.72076416015625,456.24810791015625,268.1875L456.20648193359375,268.1744384765625L452.0,286.862060546875C452.0,286.862060546875,456.20947265625,287.9827880859375,459.203125,283.8360900878906C461.92694091796875,280.06329345703125,463.5047607421875,272.2369384765625,463.77008056640625,270.8428649902344L465.33306884765625,263.74908447265625Z" />
+			</svg>
+			<a href="/" class="site-title">{SITE_TITLE}</a>
+		</div>
+		<div class="internal-links">
+			<HeaderLink href="/about">About</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/contact">Contact</HeaderLink>
+		</div>
+		<div class="auth-buttons">
+			<a href="/login" class="login-button">Login</a>
+			<a href="/signup" class="signup-button">Sign up</a>
+		</div>
+	</nav>
+</header>
+<style>
+	header {
+		margin: 0;
+		padding: 0 1em;
+		background: white;
+		box-shadow: 0 2px 8px rgba(var(--black), 5%);
+	}
+	.logo-container {
+		display: flex;
+		align-items: center;
+		gap: 0.5em;
+	}
+	.logo-container .site-title {
+		font-family: "Blonde", sans-serif;
+		font-size: 1.5em;
+		font-weight: 400;
+		color: #9584ff;
+		text-decoration: none;
+	}
+	nav {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		padding: 1em 0;
+		max-width: 1200px; /* Adjust as needed for content width */
+		margin: 0 auto;
+	}
+	.internal-links a {
+		padding: 0.5em 1em;
+		color: rgb(var(--black));
+		text-decoration: none;
+		font-weight: 500;
+	}
+	.internal-links a.active {
+		font-weight: bolder;
+		text-decoration: underline;
+	}
+	.auth-buttons {
+		display: flex;
+		gap: 1em;
+	}
+	.login-button {
+		border: 1px solid #9584ff;
+		border-radius: 24px;
+		padding: 0.5em 1.5em;
+		color: #9584ff;
+		text-decoration: none;
+		font-weight: 500;
+	}
+	.signup-button {
+		background-color: #9584ff;
+		color: #ffffff;
+		border-radius: 24px;
+		padding: 0.5em 1.5em;
+		text-decoration: none;
+		font-weight: 500;
+	}
+	@media (max-width: 720px) {
+		.internal-links, .auth-buttons {
+			display: none;
+		}
+		nav {
+			justify-content: center;
+		}
+	}
+</style>
